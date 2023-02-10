@@ -9,3 +9,4 @@ function my_Dictionary() {
   delete animal.sound;//deletes the sound ouput//
   document.getElementById("Dictionary").innerHTML = animal.sound;
 }
+//
