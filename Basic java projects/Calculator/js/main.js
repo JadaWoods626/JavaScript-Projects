@@ -5,19 +5,18 @@ const Calculator = {
   //this will hold the first operand for any expressions, we set it to null for now
   First_Operand: null,
   //checks whether or not the second operand has been inputted by the user
-  Wait_Seond_Operand: false,
+  Wait_Second_Operand: false,
   //this will hold the operator, we set it to null for now
   operator: null,
 };
-
 //this modifies values each time a button is clicked on
 function Input_Digit(digit) {
-  const {Display_Value, Wait_Seond_Operand } = Calculator;
+  const {Display_Value, Wait_Second_Operand } = Calculator;
   //this checks if the Wait_Second_Operand is true and sets Display_Value
   //to the key that was clicked on
-  if (Wait_Seond_Operand === true) {
+  if (Wait_Second_Operand === true) {
     Calculator.Display_Value = digit;
-    Calculator.Wait_Seond_Operand = false;
+    Calculator.Wait_Second_Operand = false;
   } else {
     //this overwrites Display_Value if the current value is 0
     //otherwise it adds onto it
@@ -29,7 +28,7 @@ function Input_Digit(digit) {
 function Input_Decimal(dot) {
   //this ensures that accidental clicking of the decimal point does not
   //cause bugs in the operation
-  if (Calculator.Wait_Seond_Operand === true) return;
+  if (Calculator.Wait_Second_Operand === true) return;
   if (!Calculator.Display_Value.includes(dot)) {
     //we are saying that if the Display_Value does not contain a decimal point
     //we want to add a decimal point
@@ -46,7 +45,7 @@ function Handle_Operator(Next_Operator) {
   const Value_of_Input = parseFloat(Display_Value);
   //checks if an operator already exists and if Wait_Second_Operand is true
   //then updates the operator and exits from the function
-  if (operator && Calculator.Wait_Seond_Operand) {
+  if (operator && Calculator.Wait_Second_Operand) {
     Calculator.operator = Next_Operator;
     return;
   }
@@ -64,21 +63,22 @@ function Handle_Operator(Next_Operator) {
     //this will remove any trailing 0's
     result = (result *1).toString();
     Calculator.Display_Value = parseFloat(result);
-    Calculator.operator = Next_Operator;
+    Calculator.First_Operand = parseFloat(result); 
   }
-
+  Calculator.Wait_Second_Operand = true;
+  Calculator.operator = Next_Operator;
 }
 const Perform_Calculation = {
   '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
   '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
   '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
   '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
-  '=': (First_Operand, Second_Operand) => Second_Operand
+  '=': (First_Operand, Second_Operand) => Second_Operand,
 };
 function Calculator_Reset() {
   Calculator.Display_Value = '0';
   Calculator.First_Operand = null;
-  Calculator.Wait_Seond_Operand = false;
+  Calculator.Wait_Second_Operand = false;
   Calculator.operator = null;
 }
 //function updates the calculator screen with the contents of Display_Value
