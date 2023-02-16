@@ -1,0 +1,40 @@
+/* container includes our table and our canvas */
+h1 {
+  text-align: center;
+  color: blue;
+}
+.center-container {
+  /* property sets the wiidth of our container */
+  width: 608px;
+  /* property centers our container */ 
+  margin: 0 auto;
+  /* 50px down from the top */
+  margin-top: 50px;
+}
+
+table {
+  /* property collapes table border into 1 border */
+  border-collapse: collapse;
+  /* hides outer borders on table */
+  border-style: hidden;
+}
+
+td {
+  /* property changes the cursor to the index finger hand when we hover over td element */
+  cursor: pointer;
+  /*property sets our table border style */
+  border: 4px solid blue;
+  /* property removes default padding */
+  padding: 0px;
+  width: 200px;
+  height: 200px;
+  filter: contrast(3);
+}
+ canvas {
+  /* property sets the position of our canvas to the top left corner of our container*/
+  position: absolute;
+  /* property places our canvas over the top of our table */
+  z-index: 10;
+  /* property makes our canvas invisible */
+  pointer-events: none;
+ }
