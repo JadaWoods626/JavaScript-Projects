@@ -1,0 +1,52 @@
+#menuBG {
+  width: 400px;
+  height: 1200px;
+  margin: 10px auto;
+  background-color: rgb(255, 77, 77);
+}
+#frmMenu {
+  width: 200px;
+  height: 200px;
+}
+#totalPrice {
+  width: 200px;
+  height: 190px;
+  margin: 0 auto;
+  float: right;
+}
+.left {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+.right {
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+
+#showText {
+  width: 200px;
+  height: 190px;
+  margin: 0px auto;
+  float: left;
+}
+#cart {
+  top: 0;
+  margin: 0px auto;
+  width: 400px;
+  height: 200px;
+}
+#btnOrder {
+  margin: 10px 0px 0px 100px;
+  width: 100px;
+  height: 40px;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+h3 {
+  text-align: auto;
+  color: white;
+}
