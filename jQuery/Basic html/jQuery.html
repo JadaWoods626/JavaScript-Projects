@@ -5,6 +5,7 @@
   </head>
   <script>
     $(document).ready(function() {
+      //append is used for inserting content
       $("html").append(
         "<body>\
           <div id='container'>\
@@ -18,8 +19,9 @@
       </body>" 
       );
       $("#2").css({"color":"red"});
+      //click is used for triggering an element
       $("#3").click(function() {
-        $("h1").hide();
+        $('h1').hide();
       });
     });
   </script>
