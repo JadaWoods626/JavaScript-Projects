@@ -1,6 +1,6 @@
 # JavaScript-Projects
 
- A couple small projects i made using JavaScript :)
+ A couple small projects I made using JavaScript :)
 * Tic Tac Toe
 * Calculator
 
